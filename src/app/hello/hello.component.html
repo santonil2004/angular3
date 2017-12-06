@@ -1,0 +1,9 @@
+<p *ngIf="!greeting else showGreeting">Enter a greeting inside of the text box.</p>
+<ng-template #showGreeting>
+  <p>You've added a greeting to the text box!</p>
+</ng-template>
+<p>
+  {{greeting}}
+</p>
+
+<input type="text" [(ngModel)]="greeting" (keyup)="log($event)">
