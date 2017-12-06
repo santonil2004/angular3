@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Person } from '../interfaces/person/person';
+import { Component, OnInit, Input } from '@angular/core';
+import { PEOPLE } from '../interfaces/person/person';
 
 @Component({
   selector: 'app-hello',
@@ -7,15 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HelloComponent implements OnInit {
 
-  greeting: string;
+  people = PEOPLE;
+
+  personName: Person;
 
   constructor() {
-    this.greeting = 'Hello Paul!';
    }
 
-  log(event) {
-    console.log(event);
-  }
+
+   addPerson(personName) {
+     this.people.push({name: personName});
+   }
 
   ngOnInit() {
   }
